@@ -1680,6 +1680,21 @@
                                 required style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                         </div>
                         <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Number of Windows *</label>
+                            <select id="contactWindows" class="form-control" required
+                                style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                <option value="" style="color: #999;">Select number of windows...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8+">8+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label class="form-label" style="color: #e2e8f0;">Service Type</label>
                             <select id="contactService" class="form-control"
                                 style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
@@ -2219,6 +2234,7 @@
                 from_name: document.getElementById('contactName').value,
                 from_email: document.getElementById('contactEmail').value,
                 phone: document.getElementById('contactPhone').value || 'Not provided',
+                number_of_windows: document.getElementById('contactWindows').value || 'Not specified',
                 service_type: document.getElementById('contactService').value || 'Not specified',
                 message: document.getElementById('contactMessage').value,
             };
