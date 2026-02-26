@@ -18,8 +18,8 @@
         Northglenn - Book Online 06:30 – 19:00</title>
 
     <!-- Fonts, Icons & EmailJS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap"
         rel="stylesheet">
@@ -1709,6 +1709,21 @@
                             </select>
                         </div>
                         <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Property Type *</label>
+                            <select id="contactPropertyType" class="form-control" required
+                                style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                <option value="" style="color: #999;">Select property type...</option>
+                                <option value="Residential">Residential</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Last Date Windows Were Cleaned</label>
+                            <input type="date" id="contactLastCleaned" class="form-control"
+                                style="background: #2a2a3e; border-color: #3a3a4e; color: white; color-scheme: dark;">
+                        </div>
+                        <div class="form-group">
                             <label class="form-label" style="color: #e2e8f0;">Your Message *</label>
                             <textarea id="contactMessage" class="form-control" rows="5"
                                 placeholder="Tell us about your windows, building, or cleaning needs..." required
@@ -2236,6 +2251,8 @@
                 phone: document.getElementById('contactPhone').value || 'Not provided',
                 number_of_windows: document.getElementById('contactWindows').value || 'Not specified',
                 service_type: document.getElementById('contactService').value || 'Not specified',
+                property_type: document.getElementById('contactPropertyType').value || 'Not specified',
+                last_cleaned: document.getElementById('contactLastCleaned').value || 'Not provided',
                 message: document.getElementById('contactMessage').value,
             };
 
@@ -2250,19 +2267,11 @@
                 e.target.reset();
             } catch (error) {
                 console.error('EmailJS error:', error);
-                showToast('Failed to send message. Please try again or call (720) 556-1588.', 'error');
+                showToast('Failed to send message. Please call us directly.', 'error');
             } finally {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             }
-        }
-
-        // Automated Email Simulation
-        function sendAutomatedEmail() {
-            console.log('✉️ Automated Email Sent:');
-            console.log('- Booking Confirmation');
-            console.log('- SMS Reminder (24hrs before)');
-            console.log('- Review Request (after service)');
         }
 
         // Toast Notifications
