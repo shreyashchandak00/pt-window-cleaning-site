@@ -1689,38 +1689,21 @@
                             <input type="email" id="contactEmail" class="form-control" placeholder="you@example.com"
                                 style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                         </div>
-                        <!-- Row: Number of Windows + Number of Window Panes -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label class="form-label" style="color: #e2e8f0;">Number of Windows *</label>
-                                <select id="contactWindows" class="form-control" required
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8+">8+</option>
-                                </select>
-                            </div>
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label class="form-label" style="color: #e2e8f0;">Number of Window PANES *</label>
-                                <select id="contactPanes" class="form-control" required
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8+">8+</option>
-                                </select>
-                            </div>
+                        <!-- Number of Window Panes -->
+                        <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Number of Window PANES *</label>
+                            <select id="contactPanes" class="form-control" required
+                                style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                <option value="" style="color: #999;">Select...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8+">8+</option>
+                            </select>
                         </div>
                         <!-- Row: Number of Screens + Time Since Last Cleaning -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
@@ -2350,7 +2333,7 @@
                 from_email: document.getElementById('contactEmail').value || 'Not provided',
                 phone: document.getElementById('contactPhone').value || 'Not provided',
                 address: document.getElementById('contactAddress').value || 'Not provided',
-                number_of_windows: document.getElementById('contactWindows').value || 'Not specified',
+
                 number_of_panes: document.getElementById('contactPanes').value || 'Not specified',
                 number_of_screens: document.getElementById('contactScreens').value || 'Not specified',
                 last_cleaned: document.getElementById('contactLastCleaned').value || 'Not specified',
